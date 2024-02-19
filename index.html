@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="green_9"></div>
+      <div id="green_8"></div>
+      <div id="green_7"></div>
+      <div id="green_6"></div>
+      <div id="green_5"></div>
+      <div id="green_4"></div>
+      <div id="green_3"></div>
+      <div id="green_2"></div>
+      <div id="green_1"></div>
+
+      <div id="orange_9"></div>
+      <div id="orange_8"></div>
+      <div id="orange_7"></div>
+      <div id="orange_6"></div>
+      <div id="orange_5"></div>
+      <div id="orange_4"></div>
+      <div id="orange_3"></div>
+      <div id="orange_2"></div>
+      <div id="orange_1"></div>
+
+      <div id="pink_9"></div>
+      <div id="pink_8"></div>
+      <div id="pink_7"></div>
+      <div id="pink_6"></div>
+      <div id="pink_5"></div>
+      <div id="pink_4"></div>
+      <div id="pink_3"></div>
+      <div id="pink_2"></div>
+      <div id="pink_1"></div>
+
+      <div id="blue_9"></div>
+      <div id="blue_8"></div>
+      <div id="blue_7"></div>
+      <div id="blue_6"></div>
+      <div id="blue_5"></div>
+      <div id="blue_4"></div>
+      <div id="blue_3"></div>
+      <div id="blue_2"></div>
+      <div id="blue_1"></div>
+
+      <div id="my-pallette_9"></div>
+      <div id="my-pallette_8"></div>
+      <div id="my-pallette_7"></div>
+      <div id="my-pallette_6"></div>
+      <div id="my-pallette_5"></div>
+      <div id="my-pallette_4"></div>
+      <div id="my-pallette_3"></div>
+      <div id="my-pallette_2"></div>
+      <div id="my-pallette_1"></div>
+    </div>
+    <form class="color-picker" id="colorPickerForm" onsubmit="return false;">
+      <div class="range-wrapper hue">
+        <label for="hue">Hue (between 0 and 360):</label>
+        <input
+          type="range"
+          id="hue"
+          name="hue"
+          min="0"
+          max="360"
+          oninput="showValue(this)"
+          onchange="showValue(this)"
+        />
+        <span id="hueValue">180</span>
+      </div>
+
+      <div class="range-wrapper saturation">
+        <label for="saturation">Saturation (between 0% and 100%):</label>
+        <input
+          type="range"
+          id="saturation"
+          name="saturation"
+          min="0"
+          max="100"
+          oninput="showValue(this)"
+          onchange="showValue(this)"
+        />
+        <span id="saturationValue">50</span>
+      </div>
+
+      <div class="range-wrapper lightness">
+        <label for="lightness">Lightness (between 0% and 100%):</label>
+        <input
+          type="range"
+          id="lightness"
+          name="lightness"
+          min="0"
+          max="100"
+          oninput="showValue(this)"
+          onchange="showValue(this)"
+        />
+        <span id="lightnessValue">50</span>
+      </div>
+
+      <div class="buttons">
+        <button id="button_dark" onclick="setColor(this.id)">
+          Set as the darkest
+        </button>
+        <button id="button_medium" onclick="setColor(this.id)">
+          Set as medium
+        </button>
+        <button id="button_light" onclick="setColor(this.id)">
+          Set as the lightest
+        </button>
+      </div>
+    </form>
+
+    <form
+      class="create-pallette"
+      id="createPalletteForm"
+      onsubmit="return false;"
+    >
+      <div class="row dark">
+        The darkest:
+        <label for="hue_pallette">H:</label>
+        <input type="number" id="hue_pallette_dark" name="hue_pallette_dark" />
+
+        <label for="saturation_pallette_dark">S:</label>
+        <input
+          type="number"
+          id="saturation_pallette_dark"
+          name="saturation_pallette_dark"
+        />
+
+        <label for="lightness_pallette_dark">L:</label>
+        <input
+          type="number"
+          id="lightness_pallette_dark"
+          name="lightness_pallette_dark"
+        />
+      </div>
+
+      <div class="row medium">
+        Medium:
+        <label for="hue_pallette">H:</label>
+        <input
+          type="number"
+          id="hue_pallette_medium"
+          name="hue_pallette_medium"
+        />
+
+        <label for="saturation_pallette_medium">S:</label>
+        <input
+          type="number"
+          id="saturation_pallette_medium"
+          name="saturation_pallette_medium"
+        />
+
+        <label for="lightness_pallette_medium">L:</label>
+        <input
+          type="number"
+          id="lightness_pallette_medium"
+          name="lightness_pallette_medium"
+        />
+      </div>
+
+      <div class="row light">
+        The lightest:
+        <label for="hue_pallette">H:</label>
+        <input
+          type="number"
+          id="hue_pallette_light"
+          name="hue_pallette_light"
+        />
+
+        <label for="saturation_pallette_light">S:</label>
+        <input
+          type="number"
+          id="saturation_pallette_light"
+          name="saturation_pallette_light"
+        />
+
+        <label for="lightness_pallette_light">L:</label>
+        <input
+          type="number"
+          id="lightness_pallette_light"
+          name="lightness_pallette_light"
+        />
+      </div>
+
+      <button type="submit" onclick="createPallette();">Create!</button>
+    </form>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>
