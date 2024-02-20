@@ -44,7 +44,7 @@ form {
   grid-template-columns: repeat(9, 45px);
   grid-template-rows: 45px;
   width: auto;
-  height: 45px;
+  height: auto;
   gap: 10px;
   * {
     display: block;
@@ -83,9 +83,9 @@ form {
   button {
     width: 100px;
     padding: 5px;
-    border: 1px solid hsl(0, 100, 100, 0.8);
+    border: 1px solid hsl(0, 100%, 100%, 0.8);
     border-radius: 3px;
-    background-color: hsl(0, 100, 100, 0.5);
+    background-color: hsl(0, 100%, 100%, 0.5);
     color: hsl(202, 22%, 10%);
     box-shadow: 0px 0px 6px 4px rgba(20, 27, 31, 0.06);
   }
@@ -93,26 +93,58 @@ form {
 
 .create-pallette {
   bottom: 40px;
-  right: 40px;
-  padding: 15px 20px 15px 20px;
+  left: 40px;
   background-color: hsl(200, 20%, 10%);
   color: hsl(200, 30%, 90%);
   input {
-    margin-bottom: 15px;
     border: 1px solid hsl(200, 30%, 90%);
     border-radius: 3px;
     background-color: hsl(200, 20%, 10%);
     color: hsl(200, 30%, 90%);
   }
+  button {
+    grid-column: 1 / -1;
+    margin: 15px auto;
+    padding: 5px;
+  }
 }
 
 .row {
   display: grid;
-  grid-template-columns: 130px 30px 40px 30px 40px 30px 40px;
+  grid-template-columns: 120px 30px 40px 30px 40px 30px 40px;
+  padding: 15px 20px;
   label {
     text-align: right;
     padding-right: 5px;
   }
+  &.vars {
+    grid-template-columns: 130px 180px;
+    column-gap: 20px;
+    label {
+      text-align: left;
+    }
+  }
+}
+
+.output {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 400px;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 0 30px;
+  border: 1px solid hsl(0, 0%, 78%);
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.d-none {
+  display: none;
 }
 
 #green {
@@ -147,31 +179,31 @@ form {
 
 #orange {
   &_9 {
-    background-color: hsl(20, 62%, 10%);
+    background-color: hsl(31, 100%, 10%);
   }
   &_8 {
-    background-color: hsl(25, 66%, 18%);
+    background-color: hsl(31, 100%, 20%);
   }
   &_7 {
-    background-color: hsl(30, 71%, 26%);
+    background-color: hsl(31, 100%, 30%);
   }
   &_6 {
-    background-color: hsl(35, 75%, 38%);
+    background-color: hsl(31, 100%, 40%);
   }
   &_5 {
-    background-color: hsl(40, 80%, 50%);
+    background-color: hsl(31, 100%, 50%);
   }
   &_4 {
-    background-color: hsl(42, 85%, 61%);
+    background-color: hsl(31, 100%, 62%);
   }
   &_3 {
-    background-color: hsl(45, 90%, 73%);
+    background-color: hsl(31, 100%, 74%);
   }
   &_2 {
-    background-color: hsl(48, 95%, 79%);
+    background-color: hsl(31, 100%, 86%);
   }
   &_1 {
-    background-color: hsl(50, 100%, 95%);
+    background-color: hsl(31, 100%, 97%);
   }
 }
 
@@ -232,5 +264,43 @@ form {
   }
   &_1 {
     background-color: hsl(208, 95%, 95%);
+  }
+}
+
+#turquoise {
+  &_9 {
+    background-color: hsl(180, 50%, 4%);
+  }
+
+  &_8 {
+    background-color: hsl(180, 50%, 15%);
+  }
+
+  &_7 {
+    background-color: hsl(180, 50%, 26%);
+  }
+
+  &_6 {
+    background-color: hsl(180, 50%, 37%);
+  }
+
+  &_5 {
+    background-color: hsl(180, 50%, 48%);
+  }
+
+  &_4 {
+    background-color: hsl(180, 50%, 60%);
+  }
+
+  &_3 {
+    background-color: hsl(180, 50%, 71%);
+  }
+
+  &_2 {
+    background-color: hsl(180, 50%, 83%);
+  }
+
+  &_1 {
+    background-color: hsl(180, 50%, 94%);
   }
 }

@@ -55,15 +55,15 @@
       <div id="blue_2"></div>
       <div id="blue_1"></div>
 
-      <div id="my-pallette_9"></div>
-      <div id="my-pallette_8"></div>
-      <div id="my-pallette_7"></div>
-      <div id="my-pallette_6"></div>
-      <div id="my-pallette_5"></div>
-      <div id="my-pallette_4"></div>
-      <div id="my-pallette_3"></div>
-      <div id="my-pallette_2"></div>
-      <div id="my-pallette_1"></div>
+      <div id="turquoise_9"></div>
+      <div id="turquoise_8"></div>
+      <div id="turquoise_7"></div>
+      <div id="turquoise_6"></div>
+      <div id="turquoise_5"></div>
+      <div id="turquoise_4"></div>
+      <div id="turquoise_3"></div>
+      <div id="turquoise_2"></div>
+      <div id="turquoise_1"></div>
     </div>
     <form class="color-picker" id="colorPickerForm" onsubmit="return false;">
       <div class="range-wrapper hue">
@@ -194,8 +194,15 @@
         />
       </div>
 
+      <div class="row vars">
+        <label for="var_name">Variable name:</label>
+        <input type="text" id="var_name" name="var_name" />
+      </div>
+
       <button type="submit" onclick="createPallette();">Create!</button>
     </form>
+
+    <div class="output d-none"></div>
   </body>
   <script type="text/javascript" src="script.js"></script>
 </html>
